@@ -6,6 +6,7 @@
       <h2><%= recipe.name %></h2>
       <p><%= recipe.ingredients %></p>
       <%= link_to 'Show', recipe_path(recipe) %>
+      <%= link_to 'Delete', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ul>

@@ -16,10 +16,15 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to home_index_path
+  end
+
   private
 
   def recipe_params
     params.require(:recipe).permit(:name, :image, :ingredients)
   end
 end
-
